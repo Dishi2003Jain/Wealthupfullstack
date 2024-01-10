@@ -13,7 +13,7 @@ const CodeInput = () => {
 
   const fetchGeneratedCode = async () => {
     try {
-      const response = await axios.get(`${process.env.NEXT_PUBLIC_APP_URL}/api/codes`);
+      const response = await axios.get('https://wealthup-backend2.onrender.com/api/codes');
       if (response.status === 200) {
         setGeneratedCode(response.data.code || '');
       } else {
@@ -26,7 +26,7 @@ const CodeInput = () => {
 
   const handleSubmit = async () => {
     try {
-      const response = await axios.post(`${process.env.NEXT_PUBLIC_APP_URL}/api/codes/use`, {
+      const response = await axios.post('https://wealthup-backend2.onrender.com/api/codes/use', {
         code: inputCode
       });
   
